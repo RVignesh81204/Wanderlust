@@ -1,0 +1,108 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <br />
+  <div id="filters">
+    <div class="filter">
+      <a href="/listings/trending">
+        <i class="fa-solid fa-fire"></i>
+        <p>Trending</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/room">
+        <i class="fa-solid fa-bed"></i>
+        <p>Room</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/mountains">
+        <i class="fa-solid fa-mountain-city"></i>
+        <p>Mountains</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/pools">
+        <i class="fa-solid fa-person-swimming"></i>
+        <p>Amazing Pools</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/camps">
+        <i class="fa-solid fa-tent-arrow-down-to-line"></i>
+        <p>Camping</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/farms">
+        <i class="fa-solid fa-tractor"></i>
+        <p>Farms</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/castles">
+        <i class="fa-solid fa-chess-rook"></i>
+        <p>Castles</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/parks">
+        <i class="fa-solid fa-wand-sparkles"></i>
+        <p>Parks</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/resorts">
+        <i class="fa-solid fa-water-ladder"></i>
+        <p>Resorts</p>
+      </a>
+    </div>
+    <div class="filter">
+      <a href="/listings/apartments">
+        <i class="fa-solid fa-building"></i>
+        <p>Apartments</p>
+      </a>
+    </div>
+    <div class="toggle-tax-switch">
+      <div class="form-check form-check-reverse form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="switchCheckDefault"
+        />
+        <label class="form-check-label" for="switchCheckDefault"
+          >Display total after 18%GST</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- <form method="GET" action="/listings/new">
+      <button> Add Listing </button>
+    </form>   -->
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% for (let listing of allListings) { %>
+    <a href="/listings/<%=listing.id%>" class="listing-link">
+      <div class="listing-card">
+        <img
+          src="<%=listing.image.url%>"
+          class="card-img-top"
+          alt="listing_image"
+          style="height: 20rem"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            <b> <%= listing.title %> </b> <br />
+            <span class="price">
+              &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+            </span>
+            <i class="tax-info"> &nbsp; &nbsp; &nbsp; &nbsp;+18% GST</i>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <% } %>
+  </div>
+  <script src="/js/taxSwitch.js"></script>
+</body>

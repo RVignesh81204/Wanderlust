@@ -1,0 +1,144 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <br />
+  <div class="col-8 offset-2">
+    <h3>Create Your Listing</h3>
+    <form
+      method="POST"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label"> Enter Title </label>
+        <input
+          type="text"
+          placeholder="Give a brief title"
+          name="listing[title]"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks good!</div>
+        <div class="invalid-feedback">Please enter an appropriate title</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label"> Description </label>
+        <textarea
+          name="listing[description]"
+          placeholder="Write description"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">Description looks good!</div>
+        <div class="invalid-feedback">Please enter a valid description</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label"> Upload Image </label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please upload an image</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-2 col-md-4">
+          <label for="price" class="form-label"> Price </label>
+          <input
+            type="text"
+            placeholder="Enter price"
+            name="listing[price]"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Ufff!! Good price though</div>
+          <div class="invalid-feedback">Please enter a numeric value</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="location" class="form-label"> Location </label>
+          <input
+            type="text"
+            placeholder="Enter location"
+            name="listing[location]"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Location is correct!</div>
+          <div class="invalid-feedback">Please enter a valid location</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="country" class="form-label"> Country </label>
+        <input
+          type="text"
+          placeholder="Enter country"
+          name="listing[country]"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks great!</div>
+        <div class="invalid-feedback">Please enter a valid country name</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="category" class="form-label"
+          >Choose one category for your listing:</label
+        >
+        <select id="category" name="listing[category]" class="form-control">
+          <option value="Trending">Trending</option>
+          <option value="Room">Room</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+          <option value="Camping">Camping</option>
+          <option value="Farms">Farms</option>
+          <option value="Castles">Castles</option>
+          <option value="Parks">Parks</option>
+          <option value="Resorts">Resorts</option>
+          <option value="Apartments">Apartments</option>
+        </select>
+      </div>
+
+      <button class="btn btn-outline-danger">Create Listing</button>
+      <br />
+      <br />
+    </form>
+  </div>
+</body>
+
+<!-- <h2> Add new listing details: </h2>
+ <form method="POST" action="/listings">
+ <input name = "listing[title]" placeholder="enter title" type="text">
+ <br> <br>
+
+ <textarea name = "listing[description]" placeholder="enter description"></textarea>
+ <br> <br>
+
+ <input name = "listing[image]" placeholder="enter image link/URL" type="text">
+ <br> <br>
+
+ <input name = "listing[price]" placeholder="enter price" type="number">
+ <br> <br>
+
+ <input name = "listing[location]" placeholder="enter location" type="text">
+ <br> <br>
+
+ <input name = "listing[country]" placeholder="enter country name" type="text">
+ <br>
+ <button> Add listing </button>
+ </form> -->
+
+<!-- <label for="category" class="form-label"> Select your listing category </label>
+<input
+  type="text"
+  placeholder="Enter category"
+  name="listing[category]"
+  class="form-control"
+  required
+/> -->
