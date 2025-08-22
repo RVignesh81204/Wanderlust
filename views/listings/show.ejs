@@ -143,7 +143,7 @@
           data-rating="<%=review.rating%>"
         ></p>
 
-        <% if(currUser && currUser._id.equals(listing.reviews._id)) { %>
+        <% if(currUser && currUser._id.equals(review.author._id)) { %>
         <form
           method="POST"
           action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE"
