@@ -192,6 +192,17 @@ body {
   height: 8rem;
 }
 
+#submitLink {
+  display: none;
+  border-radius: 1rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  background-color: beige;
+  width: 100px;
+}
+
+#submitLink:hover {
+  background-color: white;
+}
 /* Cards */
 .listing-card {
   border: none;

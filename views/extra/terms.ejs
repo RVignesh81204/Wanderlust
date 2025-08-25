@@ -3,7 +3,7 @@
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-10">
-        <h1 class="mb-4 text-center">Privacy Policy</h1>
+        <h1 class="mb-4 text-center">Terms & Conditions</h1>
         <p class="text-muted text-center">
           Last updated: <%= new Date().toLocaleDateString() %>
         </p>
@@ -101,6 +101,28 @@
         </p>
         <p><strong>Email:</strong> support@wanderlust.com</p>
         <p><strong>Phone:</strong> +91 12465 88319</p>
+        <br />
+        <input type="checkbox" id="terms" />
+        <label for="terms"> I accept the terms and conditions </label>
+        <br />
+        <br />
+
+        <form method="GET" action="/listings">
+          <button id="submitLink">Submit</button>
+        </form>
+
+        <script>
+          let checkBox = document.getElementById("terms");
+          let submit = document.getElementById("submitLink");
+
+          checkBox.addEventListener("change", () => {
+            if (checkBox.checked) {
+              submit.style.display = "inline";
+            } else {
+              submit.style.display = "none";
+            }
+          });
+        </script>
       </div>
     </div>
   </div>
